@@ -1,6 +1,5 @@
 "use client";
 
-// import { Faker, LocaleDefinition, base, en, vi } from "@faker-js/faker";
 import { faker } from "@faker-js/faker/locale/vi";
 import {
   ChangeEvent,
@@ -45,7 +44,6 @@ let timer: NodeJS.Timeout;
 
 const createListWords = (lang: string) => {
   const words = Array.from({ length: MAXIMUM_WORDS }, () => {
-    console.log(faker.person.fullName())
     return faker.word
       .sample({ length: { min: MIN_CHARACTER_LEN, max: MAX_CHARACTER_LEN } })
       .toLowerCase();

@@ -35,10 +35,10 @@ export default function TypingSection() {
   }
 
   return (
-    <section className="flex flex-col justify-center gap-4">
+    <section className="container flex flex-col justify-center gap-4">
       <p className="mx-auto w-fit text-2xl">{context?.time}</p>
 
-      <Select defaultValue="en" onValueChange={context?.onChangeTypingLanguage}>
+      {/* <Select defaultValue="en" onValueChange={context?.onChangeTypingLanguage}>
         <SelectTrigger className="mx-auto w-[180px]">
           <SelectValue placeholder="" />
         </SelectTrigger>
@@ -46,10 +46,10 @@ export default function TypingSection() {
           <SelectItem value="en">English</SelectItem>
           <SelectItem value="vi">Vietnamese</SelectItem>
         </SelectContent>
-      </Select>
+      </Select> */}
 
       <ClientOnly>
-        <div className="mx-auto w-full max-w-[800px]">
+        <div className="w-full">
           <ul
             ref={listWordsRef}
             className="flex h-[96px] select-none flex-wrap items-center overflow-hidden text-lg text-black"
@@ -84,7 +84,7 @@ export default function TypingSection() {
         </div>
       </ClientOnly>
 
-      <div className="mx-auto w-full max-w-[800px]">
+      <div className="w-full">
         <Input
           autoFocus
           onChange={handleTyping}
